@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
 
         val year = calendarView.year
 
-        val cmonth = String.format("%02d",calendarView.month )
+        val cmonth = String.format("%02d",calendarView.month+1 )
         val cday = String.format("%02d",calendarView.dayOfMonth )
 
         val dt: String = year.toString() + "-$cmonth-$cday"
