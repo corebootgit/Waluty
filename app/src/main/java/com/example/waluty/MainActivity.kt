@@ -6,6 +6,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import java.net.URL
 import android.os.AsyncTask
 import android.util.Log
+import android.widget.Toast
 import java.net.HttpURLConnection
 
 
@@ -31,12 +32,12 @@ class MainActivity : AppCompatActivity() {
         // Note that months are indexed from 0. So, 0 means January, 1 means february, 2 means march etc.
         val msg = "Selected date is " + dayOfMonth + "/" + (month + 1) + "/" + year
 
-        val cmonth = String.format("%02d",calendarView.month )
+        val cmonth = String.format("%02d",calendarView.month+1 )
         val cday = String.format("%02d",calendarView.dayOfMonth )
 
         val dt: String = year.toString() + "-$cmonth-$cday"
 
-        //Toast.makeText(this@MainActivity, dt, Toast.LENGTH_SHORT).show()
+        Toast.makeText(this@MainActivity, dt, Toast.LENGTH_SHORT).show()
         getCurrency("USD", dt)
         //viewText.text = String.format("%02d",calendarView.dayOfMonth )
     }
