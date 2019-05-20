@@ -58,6 +58,20 @@ class MainActivity : AppCompatActivity() {
 
         //getCurrency("USD", "2019-04-01")
 
+        calcButton.setOnClickListener {
+
+            val kk:String = kursView.text.toString()
+            val ll:String = valInput.text.toString()
+            val fir: Float
+            val sec: Float
+
+            fir = ll.toFloat()
+            sec = kk.toFloat()
+
+
+           resTextview.text = (fir * sec).toString()
+        }
+
 
     }
 
@@ -121,7 +135,7 @@ class MainActivity : AppCompatActivity() {
 
                 val kurs: String = result.substring(index + 5..index + 10)
 
-                kursView.text = kurs + " PLN"
+                kursView.text = kurs
 
                 //viewText.text = kurs
             }
